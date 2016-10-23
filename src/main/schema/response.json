@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"meta": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "integer"
+				},
+				"error_detail": {
+					"type": "string"
+				},
+				"error_type": {
+					"type": "string"
+				},
+				"developer_friendly": {
+					"type": "string"
+				},
+				"response_time": {
+					"$ref": "time.json"
+				},
+				"init_time": {
+					"$ref": "time.json"
+				}
+			},
+			"required": [
+				"code",
+				"response_time",
+				"init_time"
+			]
+		},
+		"notifications": {
+			"type": "array",
+			"items": {}
+		},
+		"response": {
+			"oneOf": [
+				{ "$ref": "brewery.json" },
+				{ "$ref": "beer.json" }
+			]
+		}
+	},
+	"required": [
+		"meta",
+		"notifications",
+		"response"
+	]
+}

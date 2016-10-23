@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "is_super": {
+      "type": "boolean"
+    },
+    "sort": {
+      "type": "string"
+    },
+    "filter": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "has_had": {
+            "type": "null"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "beer": {
+				"$ref": "beer.json"
+          }
+        }
+      }
+    },
+    "beer_count": {
+      "type": "integer"
+    }
+  }
+}

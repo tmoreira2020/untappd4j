@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "bid": {
+      "type": "integer"
+    },
+    "beer_name": {
+      "type": "string"
+    },
+    "beer_label": {
+      "type": "string"
+    },
+    "beer_label_hd": {
+      "type": "string"
+    },
+    "beer_abv": {
+      "type": "number"
+    },
+    "beer_ibu": {
+      "type": "integer"
+    },
+    "beer_description": {
+      "type": "string"
+    },
+    "beer_style": {
+      "type": "string"
+    },
+    "is_in_production": {
+      "type": "integer"
+    },
+    "beer_slug": {
+      "type": "string"
+    },
+    "is_homebrew": {
+      "type": "integer"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "rating_count": {
+      "type": "integer"
+    },
+    "rating_score": {
+      "type": "number"
+    },
+    "stats": {
+      "type": "null"
+    },
+    "brewery": {
+      "$ref": "brewery.json"
+    },
+    "auth_rating": {
+      "type": "integer"
+    },
+    "wish_list": {
+      "type": "boolean"
+    },
+    "media": {
+      "type": "null"
+    },
+    "checkins": {
+      "type": "null"
+    },
+    "similar": {
+      "type": "null"
+    },
+    "friends": {
+      "type": "null"
+    },
+    "weighted_rating_score": {
+      "type": "number"
+    },
+    "vintages": {
+      "type": "null"
+    }
+  }
+}
