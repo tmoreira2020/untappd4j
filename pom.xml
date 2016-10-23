@@ -27,7 +27,7 @@
 
 	<groupId>br.com.thiagomoreira.untappd</groupId>
 	<artifactId>untappd4j</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<name>Untappd4j</name>
 	<description>Untappd for Java - A Java wrapper to the Untappd API</description>
@@ -37,7 +37,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:tmoreira2020/untappd4j.git</connection>
 		<developerConnection>scm:git:git@github.com:tmoreira2020/untappd4j.git</developerConnection>
-		<tag>1.0.0</tag>
+		<tag>HEAD</tag>
 		<url>https://github.com/tmoreira2020/untappd4j</url>
 	</scm>
 	<issueManagement>
