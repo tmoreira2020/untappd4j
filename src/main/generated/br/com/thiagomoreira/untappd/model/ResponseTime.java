@@ -1,13 +1,15 @@
 
 package br.com.thiagomoreira.untappd.model;
 
+import java.io.Serializable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class ResponseTime {
+public class ResponseTime implements Serializable
+{
 
     @SerializedName("time")
     @Expose
@@ -15,6 +17,7 @@ public class ResponseTime {
     @SerializedName("measure")
     @Expose
     private String measure;
+    private final static long serialVersionUID = -382185783893117712L;
 
     /**
      * 

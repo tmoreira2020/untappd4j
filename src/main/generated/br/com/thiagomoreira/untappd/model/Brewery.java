@@ -1,13 +1,15 @@
 
 package br.com.thiagomoreira.untappd.model;
 
+import java.io.Serializable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Brewery {
+public class Brewery implements Serializable
+{
 
     @SerializedName("brewery_id")
     @Expose
@@ -60,6 +62,7 @@ public class Brewery {
     @SerializedName("beer_list")
     @Expose
     private BeerList beerList;
+    private final static long serialVersionUID = -4939073101743761679L;
 
     /**
      * 

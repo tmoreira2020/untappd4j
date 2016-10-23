@@ -1,6 +1,7 @@
 
 package br.com.thiagomoreira.untappd.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -9,7 +10,8 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Response {
+public class Response implements Serializable
+{
 
     /**
      * 
@@ -35,6 +37,7 @@ public class Response {
     @SerializedName("response")
     @Expose
     private Object response;
+    private final static long serialVersionUID = 6255805409863997755L;
 
     /**
      * 

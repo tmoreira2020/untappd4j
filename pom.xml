@@ -88,6 +88,7 @@
 				<version>0.4.27</version>
 				<configuration>
 					<annotationStyle>gson</annotationStyle>
+					<serializable>true</serializable>
 					<sourceDirectory>${basedir}/src/main/schema</sourceDirectory>
 					<targetPackage>br.com.thiagomoreira.untappd.model</targetPackage>
 					<includes>

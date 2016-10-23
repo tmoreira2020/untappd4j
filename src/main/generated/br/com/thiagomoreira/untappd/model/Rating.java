@@ -1,13 +1,15 @@
 
 package br.com.thiagomoreira.untappd.model;
 
+import java.io.Serializable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Rating {
+public class Rating implements Serializable
+{
 
     @SerializedName("count")
     @Expose
@@ -15,6 +17,7 @@ public class Rating {
     @SerializedName("rating_score")
     @Expose
     private double ratingScore;
+    private final static long serialVersionUID = -5697530254737882723L;
 
     /**
      * 

@@ -1,6 +1,7 @@
 
 package br.com.thiagomoreira.untappd.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
@@ -9,7 +10,8 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class BeerList {
+public class BeerList implements Serializable
+{
 
     @SerializedName("is_super")
     @Expose
@@ -29,6 +31,7 @@ public class BeerList {
     @SerializedName("beer_count")
     @Expose
     private int beerCount;
+    private final static long serialVersionUID = -7811609829786410538L;
 
     /**
      * 
