@@ -40,10 +40,15 @@ public class Untappd {
 	protected BreweryService breweryService;
 
 	public Untappd(String clientId, String clientSecret) {
-		this(clientId, clientSecret, false);
+		this(clientId, clientSecret, null, false);
 	}
 
-	public Untappd(String clientId, String clientSecret, boolean debug) {
+	public Untappd(String accessToken) {
+		this(null, null, accessToken, false);
+	}
+
+	public Untappd(String clientId, String clientSecret, String accessToken,
+			boolean debug) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		Gson gson = gsonBuilder.registerTypeAdapter(new TypeToken<Response>() {
 		}.getType(), new ResponseDeserializaer()).create();
@@ -59,7 +64,7 @@ public class Untappd {
 		}
 
 		httpClientBuilder.addInterceptor(new UntappdAuthorizationInterceptor(
-				clientId, clientSecret));
+				clientId, clientSecret, accessToken));
 
 		Retrofit.Builder builder = new Retrofit.Builder();
 		Retrofit retrofit = builder.baseUrl("https://api.untappd.com")
