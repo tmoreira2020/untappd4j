@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+            "uid": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "user_name": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "user_avatar": {
+              "type": "string"
+            },
+            "user_avatar_hd": {
+              "type": "string"
+            },
+            "user_cover_photo": {
+              "type": "string"
+            },
+            "user_cover_photo_offset": {
+              "type": "integer"
+            },
+            "is_private": {
+              "type": "integer"
+            },
+            "location": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "bio": {
+              "type": "string"
+            },
+            "is_supporter": {
+              "type": "integer"
+            },
+            "relationship": {
+              "type": "null"
+            },
+            "untappd_url": {
+              "type": "string"
+            },
+            "account_type": {
+              "type": "string"
+            },
+            "stats": {
+				"$ref": "user_stats.json"
+            },
+            "contact": {
+				"$ref": "contact.json"
+            },
+            "date_joined": {
+              "type": "string"
+            },
+            "settings": {
+              "type": "array",
+              "items": {}
+            }
+          }
+    }
+}

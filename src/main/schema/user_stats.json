@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+    "properties": {
+      "total_badges": {
+        "type": "integer"
+      },
+      "total_friends": {
+        "type": "integer"
+      },
+      "total_checkins": {
+        "type": "integer"
+      },
+      "total_beers": {
+        "type": "integer"
+      },
+      "total_created_beers": {
+        "type": "integer"
+      },
+      "total_followings": {
+        "type": "integer"
+      },
+      "total_photos": {
+        "type": "integer"
+      }
+    }
+}
