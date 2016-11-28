@@ -27,6 +27,7 @@ import br.com.thiagomoreira.untappd.model.Beer;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.Meta;
 import br.com.thiagomoreira.untappd.model.Response;
+import br.com.thiagomoreira.untappd.model.User;
 
 public class ResponseDeserializaer implements JsonDeserializer<Response> {
 
@@ -54,6 +55,13 @@ public class ResponseDeserializaer implements JsonDeserializer<Response> {
 					Beer.class);
 
 			response.setResponse(beer);
+		}
+
+		if (responseJsonObject.has("user")) {
+			User user = context.deserialize(responseJsonObject.get("user"),
+					User.class);
+
+			response.setResponse(user);
 		}
 
 		return response;
