@@ -1,42 +1,42 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "badge": {
-      "type": "object",
-      "properties": {
-        "badges_to_facebook": {
-          "type": "integer"
-        },
-        "badges_to_twitter": {
-          "type": "integer"
-        }
-      }
-    },
-    "checkin": {
-      "type": "object",
-      "properties": {
-        "checkin_to_facebook": {
-          "type": "integer"
-        },
-        "checkin_to_twitter": {
-          "type": "integer"
-        },
-        "checkin_to_foursquare": {
-          "type": "integer"
-        }
-      }
-    },
-    "navigation": {
-      "type": "object",
-      "properties": {
-        "default_to_checkin": {
-          "type": "integer"
-        }
-      }
-    },
-    "email_address": {
-      "type": "string"
-    }
-  }
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"badge": {
+			"type": "object",
+			"properties": {
+				"badges_to_facebook": {
+					"type": "integer"
+				},
+				"badges_to_twitter": {
+					"type": "integer"
+				}
+			}
+		},
+		"checkin": {
+			"type": "object",
+			"properties": {
+				"checkin_to_facebook": {
+					"type": "integer"
+				},
+				"checkin_to_twitter": {
+					"type": "integer"
+				},
+				"checkin_to_foursquare": {
+					"type": "integer"
+				}
+			}
+		},
+		"navigation": {
+			"type": "object",
+			"properties": {
+				"default_to_checkin": {
+					"type": "integer"
+				}
+			}
+		},
+		"email_address": {
+			"type": "string"
+		}
+	}
 }

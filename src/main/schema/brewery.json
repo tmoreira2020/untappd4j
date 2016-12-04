@@ -1,57 +1,57 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "brewery_id": {
-      "type": "integer"
-    },
-    "brewery_name": {
-      "type": "string"
-    },
-    "brewery_slug": {
-      "type": "string"
-    },
-    "brewery_label": {
-      "type": "string"
-    },
-    "country_name": {
-      "type": "string"
-    },
-    "brewery_in_production": {
-      "type": "integer"
-    },
-    "is_independent": {
-      "type": "integer"
-    },
-    "claimed_status": {
-      "type": "null"
-    },
-    "beer_count": {
-      "type": "integer"
-    },
-    "contact": {
-      "type": "null"
-    },
-    "brewery_type": {
-      "type": "string"
-    },
-    "brewery_type_id": {
-      "type": "integer"
-    },
-    "location": {
-      "$ref": "location.json"
-    },
-    "rating": {
-      "$ref": "rating.json"
-    },
-    "brewery_description": {
-      "type": "string"
-    },
-    "stats": {
-      "type": "null"
-    },
-    "beer_list": {
-      "$ref": "beer_list.json"
-    }
-  }
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"brewery_id": {
+			"type": "integer"
+		},
+		"brewery_name": {
+			"type": "string"
+		},
+		"brewery_slug": {
+			"type": "string"
+		},
+		"brewery_label": {
+			"type": "string"
+		},
+		"country_name": {
+			"type": "string"
+		},
+		"brewery_in_production": {
+			"type": "integer"
+		},
+		"is_independent": {
+			"type": "integer"
+		},
+		"claimed_status": {
+			"type": "null"
+		},
+		"beer_count": {
+			"type": "integer"
+		},
+		"contact": {
+			"type": "null"
+		},
+		"brewery_type": {
+			"type": "string"
+		},
+		"brewery_type_id": {
+			"type": "integer"
+		},
+		"location": {
+			"$ref": "location.json"
+		},
+		"rating": {
+			"$ref": "rating.json"
+		},
+		"brewery_description": {
+			"type": "string"
+		},
+		"stats": {
+			"type": "null"
+		},
+		"beer_list": {
+			"$ref": "beer_list.json"
+		}
+	}
 }

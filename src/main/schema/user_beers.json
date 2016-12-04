@@ -1,61 +1,61 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "object",
-    "properties": {
-        "is_search": {
-            "type": "boolean"
-        },
-        "beers": {
-            "type": "object",
-            "properties": {
-                "sort": {
-                    "type": "string"
-                },
-                "sort_english": {
-                    "type": "string"
-                },
-                "count": {
-                    "type": "integer"
-                },
-                "items": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "first_checkin_id": {
-                                "type": "integer"
-                            },
-                            "first_created_at": {
-                                "type": "string"
-                            },
-                            "recent_checkin_id": {
-                                "type": "integer"
-                            },
-                            "recent_created_at": {
-                                "type": "string"
-                            },
-                            "recent_created_at_timezone": {
-                                "type": "string"
-                            },
-                            "rating_score": {
-                                "type": "integer"
-                            },
-                            "first_had": {
-                                "type": "string"
-                            },
-                            "count": {
-                                "type": "integer"
-                            },
-                            "beer": {
-                                "$ref": "beer.json"
-                            },
-                            "brewery": {
-                                "$ref": "brewery.json"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"is_search": {
+			"type": "boolean"
+		},
+		"beers": {
+			"type": "object",
+			"properties": {
+				"sort": {
+					"type": "string"
+				},
+				"sort_english": {
+					"type": "string"
+				},
+				"count": {
+					"type": "integer"
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"first_checkin_id": {
+								"type": "integer"
+							},
+							"first_created_at": {
+								"type": "string"
+							},
+							"recent_checkin_id": {
+								"type": "integer"
+							},
+							"recent_created_at": {
+								"type": "string"
+							},
+							"recent_created_at_timezone": {
+								"type": "string"
+							},
+							"rating_score": {
+								"type": "integer"
+							},
+							"first_had": {
+								"type": "string"
+							},
+							"count": {
+								"type": "integer"
+							},
+							"beer": {
+								"$ref": "beer.json"
+							},
+							"brewery": {
+								"$ref": "brewery.json"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

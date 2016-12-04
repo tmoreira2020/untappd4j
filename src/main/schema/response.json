@@ -36,8 +36,12 @@
 		},
 		"response": {
 			"oneOf": [
-				{ "$ref": "brewery.json" },
-				{ "$ref": "beer.json" }
+				{
+					"$ref": "brewery.json"
+				},
+				{
+					"$ref": "beer.json"
+				}
 			]
 		}
 	},
