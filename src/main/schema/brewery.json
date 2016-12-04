@@ -39,7 +39,7 @@
       "type": "integer"
     },
     "location": {
-      "type": "null"
+      "$ref": "location.json"
     },
     "rating": {
       "$ref": "rating.json"

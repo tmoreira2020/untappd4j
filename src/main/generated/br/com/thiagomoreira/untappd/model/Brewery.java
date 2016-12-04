@@ -49,7 +49,7 @@ public class Brewery implements Serializable
     private int breweryTypeId;
     @SerializedName("location")
     @Expose
-    private Object location;
+    private Location location;
     @SerializedName("rating")
     @Expose
     private Rating rating;
@@ -62,7 +62,7 @@ public class Brewery implements Serializable
     @SerializedName("beer_list")
     @Expose
     private BeerList beerList;
-    private final static long serialVersionUID = -4939073101743761679L;
+    private final static long serialVersionUID = -2137679329682689611L;
 
     /**
      * 
@@ -285,7 +285,7 @@ public class Brewery implements Serializable
      * @return
      *     The location
      */
-    public Object getLocation() {
+    public Location getLocation() {
         return location;
     }
 
@@ -294,7 +294,7 @@ public class Brewery implements Serializable
      * @param location
      *     The location
      */
-    public void setLocation(Object location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
