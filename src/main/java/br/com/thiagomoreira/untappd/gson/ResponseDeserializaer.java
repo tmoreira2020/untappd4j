@@ -24,6 +24,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
 import br.com.thiagomoreira.untappd.model.Beer;
+import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.Meta;
 import br.com.thiagomoreira.untappd.model.Response;
@@ -62,6 +63,13 @@ public class ResponseDeserializaer implements JsonDeserializer<Response> {
 					User.class);
 
 			response.setResponse(user);
+		}
+
+		if (responseJsonObject.has("beers")) {
+			Beers beers = context.deserialize(responseJsonObject.get("beers"),
+					Beers.class);
+
+			response.setResponse(beers);
 		}
 
 		return response;

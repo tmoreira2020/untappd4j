@@ -19,9 +19,15 @@ import br.com.thiagomoreira.untappd.model.Response;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface BeerService {
 
 	@GET("/v4/beer/info/{beerId}")
 	Call<Response> getBeer(@Path("beerId") long beerId);
+
+	@GET("/v4/user/beers/{username}")
+	Call<Response> getBeersByUser(@Path("username") String username,
+			@Query("offset") int offset, @Query("limit") int limit);
+
 }

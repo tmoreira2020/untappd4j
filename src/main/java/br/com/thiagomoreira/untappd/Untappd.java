@@ -23,6 +23,7 @@ import com.google.gson.reflect.TypeToken;
 
 import br.com.thiagomoreira.untappd.gson.ResponseDeserializaer;
 import br.com.thiagomoreira.untappd.model.Beer;
+import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.Response;
 import br.com.thiagomoreira.untappd.model.User;
@@ -102,6 +103,22 @@ public class Untappd {
 		if (response.isSuccessful()) {
 
 			return (Beer) response2.getResponse();
+		} else {
+			throw new IOException(response2.getMeta().getErrorDetail());
+		}
+	}
+
+	public Beers getBeerByUsername(String username, int offset, int limit)
+			throws IOException {
+		Call<Response> call = beerService.getBeersByUser(username, offset,
+				limit);
+
+		retrofit2.Response<Response> response = call.execute();
+		Response response2 = response.body();
+
+		if (response.isSuccessful()) {
+
+			return (Beers) response2.getResponse();
 		} else {
 			throw new IOException(response2.getMeta().getErrorDetail());
 		}
