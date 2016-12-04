@@ -63,8 +63,7 @@
               "type": "string"
             },
             "settings": {
-              "type": "array",
-              "items": {}
+				"$ref": "user_settings.json"
             }
           }
     }

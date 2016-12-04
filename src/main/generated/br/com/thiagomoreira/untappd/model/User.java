@@ -2,8 +2,6 @@
 package br.com.thiagomoreira.untappd.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -75,8 +73,8 @@ public class User implements Serializable
     private String dateJoined;
     @SerializedName("settings")
     @Expose
-    private List<Object> settings = new ArrayList<Object>();
-    private final static long serialVersionUID = -2231681888580758703L;
+    private Settings settings;
+    private final static long serialVersionUID = -5598752849432339171L;
 
     /**
      * 
@@ -443,7 +441,7 @@ public class User implements Serializable
      * @return
      *     The settings
      */
-    public List<Object> getSettings() {
+    public Settings getSettings() {
         return settings;
     }
 
@@ -452,7 +450,7 @@ public class User implements Serializable
      * @param settings
      *     The settings
      */
-    public void setSettings(List<Object> settings) {
+    public void setSettings(Settings settings) {
         this.settings = settings;
     }
 
