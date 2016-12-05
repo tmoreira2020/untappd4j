@@ -21,7 +21,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.thiagomoreira.untappd.model.User;
-import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okio.Buffer;
@@ -30,19 +29,8 @@ public class UntappdTest {
 
 	@Test
 	public void getUser() throws IOException {
-		MockWebServer server = new MockWebServer();
-		Buffer buffer = new Buffer();
-
-		buffer.readFrom(getClass().getResourceAsStream("/get-user-test.json"));
-
-		server.enqueue(new MockResponse().setBody(buffer));
-
-		server.start();
-
-		HttpUrl baseUrl = server.url("/");
-
-		Untappd untappd = new Untappd(null, null, null, baseUrl.toString(),
-				true);
+		Untappd untappd = new Untappd(null, null, null,
+				setup("/get-user-test.json"), true);
 
 		String username = "tmoreira2020";
 		User user = untappd.getUser(username);
@@ -50,4 +38,18 @@ public class UntappdTest {
 		Assert.assertNotNull(user);
 		Assert.assertEquals(username, user.getUserName());;
 	}
+
+	protected String setup(String jsonPath) throws IOException {
+		MockWebServer server = new MockWebServer();
+		Buffer buffer = new Buffer();
+
+		buffer.readFrom(getClass().getResourceAsStream(jsonPath));
+
+		server.enqueue(new MockResponse().setBody(buffer));
+
+		server.start();
+
+		return server.url("/").toString();
+	}
+
 }
