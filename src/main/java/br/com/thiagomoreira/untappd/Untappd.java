@@ -53,6 +53,12 @@ public class Untappd {
 
 	public Untappd(String clientId, String clientSecret, String accessToken,
 			boolean debug) {
+		this(clientId, clientSecret, accessToken, "https://api.untappd.com",
+				debug);
+	}
+
+	Untappd(String clientId, String clientSecret, String accessToken,
+			String baseUrl, boolean debug) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		Gson gson = gsonBuilder.registerTypeAdapter(new TypeToken<Response>() {
 		}.getType(), new ResponseDeserializaer()).create();
@@ -71,7 +77,7 @@ public class Untappd {
 				clientId, clientSecret, accessToken));
 
 		Retrofit.Builder builder = new Retrofit.Builder();
-		Retrofit retrofit = builder.baseUrl("https://api.untappd.com")
+		Retrofit retrofit = builder.baseUrl(baseUrl)
 				.addConverterFactory(GsonConverterFactory.create(gson))
 				.client(httpClientBuilder.build()).build();
 
