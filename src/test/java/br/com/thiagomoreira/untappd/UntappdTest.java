@@ -20,12 +20,25 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.User;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okio.Buffer;
 
 public class UntappdTest {
+
+	@Test
+	public void getBrewery() throws IOException {
+		Untappd untappd = new Untappd(null, null, null,
+				setup("/get-brewery-test.json"), true);
+
+		long breweryId = 207389;
+		Brewery brewery = untappd.getBrewery(breweryId);
+
+		Assert.assertNotNull(brewery);
+		Assert.assertEquals(breweryId, brewery.getBreweryId());;
+	}
 
 	@Test
 	public void getUser() throws IOException {
