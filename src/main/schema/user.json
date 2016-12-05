@@ -57,7 +57,7 @@
 			"$ref": "user_stats.json"
 		},
 		"contact": {
-			"$ref": "contact.json"
+			"$ref": "user_contact.json"
 		},
 		"date_joined": {
 			"type": "string"

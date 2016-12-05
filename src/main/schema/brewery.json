@@ -39,10 +39,10 @@
 			"type": "integer"
 		},
 		"location": {
-			"$ref": "location.json"
+			"$ref": "brewery_location.json"
 		},
 		"rating": {
-			"$ref": "rating.json"
+			"$ref": "brewery_rating.json"
 		},
 		"brewery_description": {
 			"type": "string"
