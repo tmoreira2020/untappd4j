@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"twitter": {
+			"type": "string"
+		},
+		"facebook": {
+			"type": "string"
+		},
+		"instagram": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		}
+	}
+}

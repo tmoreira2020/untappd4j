@@ -67,14 +67,14 @@ public class User implements Serializable
     private Stats stats;
     @SerializedName("contact")
     @Expose
-    private Contact contact;
+    private Contact_ contact;
     @SerializedName("date_joined")
     @Expose
     private String dateJoined;
     @SerializedName("settings")
     @Expose
     private Settings settings;
-    private final static long serialVersionUID = -5598752849432339171L;
+    private final static long serialVersionUID = -7736496709636400256L;
 
     /**
      * 
@@ -405,7 +405,7 @@ public class User implements Serializable
      * @return
      *     The contact
      */
-    public Contact getContact() {
+    public Contact_ getContact() {
         return contact;
     }
 
@@ -414,7 +414,7 @@ public class User implements Serializable
      * @param contact
      *     The contact
      */
-    public void setContact(Contact contact) {
+    public void setContact(Contact_ contact) {
         this.contact = contact;
     }
 

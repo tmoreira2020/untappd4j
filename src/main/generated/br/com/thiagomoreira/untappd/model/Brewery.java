@@ -40,7 +40,7 @@ public class Brewery implements Serializable
     private int beerCount;
     @SerializedName("contact")
     @Expose
-    private Object contact;
+    private Contact contact;
     @SerializedName("brewery_type")
     @Expose
     private String breweryType;
@@ -62,7 +62,7 @@ public class Brewery implements Serializable
     @SerializedName("beer_list")
     @Expose
     private BeerList beerList;
-    private final static long serialVersionUID = -2137679329682689611L;
+    private final static long serialVersionUID = -5809995308140342444L;
 
     /**
      * 
@@ -231,7 +231,7 @@ public class Brewery implements Serializable
      * @return
      *     The contact
      */
-    public Object getContact() {
+    public Contact getContact() {
         return contact;
     }
 
@@ -240,7 +240,7 @@ public class Brewery implements Serializable
      * @param contact
      *     The contact
      */
-    public void setContact(Object contact) {
+    public void setContact(Contact contact) {
         this.contact = contact;
     }
 
