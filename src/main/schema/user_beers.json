@@ -38,7 +38,7 @@
 								"type": "string"
 							},
 							"rating_score": {
-								"type": "integer"
+								"type": "number"
 							},
 							"first_had": {
 								"type": "string"

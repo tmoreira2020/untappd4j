@@ -61,7 +61,7 @@ public class Beer implements Serializable
     private Brewery brewery;
     @SerializedName("auth_rating")
     @Expose
-    private int authRating;
+    private double authRating;
     @SerializedName("wish_list")
     @Expose
     private boolean wishList;
@@ -83,7 +83,7 @@ public class Beer implements Serializable
     @SerializedName("vintages")
     @Expose
     private Object vintages;
-    private final static long serialVersionUID = 162009548227706262L;
+    private final static long serialVersionUID = -1293952362985804318L;
 
     /**
      * 
@@ -378,7 +378,7 @@ public class Beer implements Serializable
      * @return
      *     The authRating
      */
-    public int getAuthRating() {
+    public double getAuthRating() {
         return authRating;
     }
 
@@ -387,7 +387,7 @@ public class Beer implements Serializable
      * @param authRating
      *     The auth_rating
      */
-    public void setAuthRating(int authRating) {
+    public void setAuthRating(double authRating) {
         this.authRating = authRating;
     }
 

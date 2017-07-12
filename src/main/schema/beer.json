@@ -51,7 +51,7 @@
 			"$ref": "brewery.json"
 		},
 		"auth_rating": {
-			"type": "integer"
+			"type": "number"
 		},
 		"wish_list": {
 			"type": "boolean"

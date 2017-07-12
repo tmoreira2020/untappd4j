@@ -28,7 +28,7 @@ public class Item_ implements Serializable
     private String recentCreatedAtTimezone;
     @SerializedName("rating_score")
     @Expose
-    private int ratingScore;
+    private double ratingScore;
     @SerializedName("first_had")
     @Expose
     private String firstHad;
@@ -41,7 +41,7 @@ public class Item_ implements Serializable
     @SerializedName("brewery")
     @Expose
     private Brewery brewery;
-    private final static long serialVersionUID = 3190864537474968808L;
+    private final static long serialVersionUID = -8889018130126768208L;
 
     /**
      * 
@@ -138,7 +138,7 @@ public class Item_ implements Serializable
      * @return
      *     The ratingScore
      */
-    public int getRatingScore() {
+    public double getRatingScore() {
         return ratingScore;
     }
 
@@ -147,7 +147,7 @@ public class Item_ implements Serializable
      * @param ratingScore
      *     The rating_score
      */
-    public void setRatingScore(int ratingScore) {
+    public void setRatingScore(double ratingScore) {
         this.ratingScore = ratingScore;
     }
 
