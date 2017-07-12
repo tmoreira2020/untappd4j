@@ -20,6 +20,7 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.User;
 import okhttp3.mockwebserver.MockResponse;
@@ -38,6 +39,16 @@ public class UntappdTest {
 
 		Assert.assertNotNull(brewery);
 		Assert.assertEquals(breweryId, brewery.getBreweryId());;
+	}
+
+	@Test
+	public void getBeersByUsername() throws IOException {
+		Untappd untappd = new Untappd(null, null, null,
+				setup("/get-beers-by-username-test.json"), true);
+
+		Beers beers = untappd.getBeerByUsername("tmoreira2020", 0, 50);
+
+		Assert.assertEquals(28, beers.getCount());
 	}
 
 	@Test
