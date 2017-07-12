@@ -46,7 +46,7 @@ public class UntappdTest {
 		Untappd untappd = new Untappd(null, null, null,
 				setup("/get-beers-by-username-test.json"), true);
 
-		Beers beers = untappd.getBeerByUsername("tmoreira2020", 0, 50);
+		Beers beers = untappd.getBeersByUsername("tmoreira2020", 0, 50);
 
 		Assert.assertEquals(28, beers.getCount());
 	}

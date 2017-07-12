@@ -114,7 +114,7 @@ public class Untappd {
 		}
 	}
 
-	public Beers getBeerByUsername(String username, int offset, int limit)
+	public Beers getBeersByUsername(String username, int offset, int limit)
 			throws IOException {
 		Call<Response> call = beerService.getBeersByUser(username, offset,
 				limit);
