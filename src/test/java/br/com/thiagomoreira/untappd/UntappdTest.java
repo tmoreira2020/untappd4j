@@ -23,6 +23,7 @@ import org.junit.Test;
 import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.User;
+import br.com.thiagomoreira.untappd.model.Venue;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okio.Buffer;
@@ -61,6 +62,18 @@ public class UntappdTest {
 
 		Assert.assertNotNull(user);
 		Assert.assertEquals(username, user.getUserName());;
+	}
+
+	@Test
+	public void getVenue() throws IOException {
+		Untappd untappd = new Untappd(null, null, null,
+				setup("/get-venue-test.json"), true);
+
+		int venueId = 6781864;
+		Venue venue = untappd.getVenue(venueId);
+
+		Assert.assertNotNull(venue);
+		Assert.assertEquals(venueId, venue.getVenueId());;
 	}
 
 	protected String setup(String jsonPath) throws IOException {
