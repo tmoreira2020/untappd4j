@@ -27,10 +27,12 @@ import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
 import br.com.thiagomoreira.untappd.model.Response;
 import br.com.thiagomoreira.untappd.model.User;
+import br.com.thiagomoreira.untappd.model.Venue;
 import br.com.thiagomoreira.untappd.security.UntappdAuthorizationInterceptor;
 import br.com.thiagomoreira.untappd.service.BeerService;
 import br.com.thiagomoreira.untappd.service.BreweryService;
 import br.com.thiagomoreira.untappd.service.UserService;
+import br.com.thiagomoreira.untappd.service.VenueService;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -42,6 +44,7 @@ public class Untappd {
 	protected BeerService beerService;
 	protected BreweryService breweryService;
 	protected UserService userService;
+	protected VenueService venueService;
 
 	public Untappd(String clientId, String clientSecret) {
 		this(clientId, clientSecret, null, false);
@@ -84,6 +87,7 @@ public class Untappd {
 		beerService = retrofit.create(BeerService.class);
 		breweryService = retrofit.create(BreweryService.class);
 		userService = retrofit.create(UserService.class);
+		venueService = retrofit.create(VenueService.class);
 	}
 
 	public Brewery getBrewery(long breweryId) throws IOException {
@@ -139,6 +143,20 @@ public class Untappd {
 		if (response.isSuccessful()) {
 
 			return (User) response2.getResponse();
+		} else {
+			throw new IOException(response2.getMeta().getErrorDetail());
+		}
+	}
+
+	public Venue getVenue(int venueId) throws IOException {
+		Call<Response> call = venueService.getVenue(venueId);
+
+		retrofit2.Response<Response> response = call.execute();
+		Response response2 = response.body();
+
+		if (response.isSuccessful()) {
+
+			return (Venue) response2.getResponse();
 		} else {
 			throw new IOException(response2.getMeta().getErrorDetail());
 		}

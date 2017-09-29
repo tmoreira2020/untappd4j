@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"count": {
+			"type": "integer"
+		},
+		"items": {
+			"items": {
+				"javaType": "br.com.thiagomoreira.untappd.model.Category"
+			},
+			"type": "array"
+		}
+	}
+}

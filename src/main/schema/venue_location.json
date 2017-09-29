@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"lat": {
+			"type": "number"
+		},
+		"lng": {
+			"type": "number"
+		},
+		"venue_address": {
+			"type": "string"
+		},
+		"venue_city": {
+			"type": "string"
+		},
+		"venue_country": {
+			"type": "string"
+		},
+		"venue_state": {
+			"type": "string"
+		}
+	}
+}

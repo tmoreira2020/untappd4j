@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"categories": {
+			"$ref": "categories.json"
+		},
+		"contact": {
+			"$ref": "contact.json"
+		},
+		"foursquare": {
+			"$ref": "foursquare.json"
+		},
+		"last_updated": {
+			"type": "string"
+		},
+		"location": {
+			"javaType": "br.com.thiagomoreira.untappd.model.VenueLocation"
+		},
+		"primary_category": {
+			"type": "string"
+		},
+		"public_venue": {
+			"type": "boolean"
+		},
+		"stats": {
+			"javaType": "br.com.thiagomoreira.untappd.model.VenueStats"
+		},
+		"venue_icon": {
+			"$ref": "venue_icon.json"
+		},
+		"venue_id": {
+			"type": "integer"
+		},
+		"venue_name": {
+			"type": "string"
+		}
+	}
+}

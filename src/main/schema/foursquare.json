@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"foursquare_id": {
+			"type": "string"
+		},
+		"foursquare_url": {
+			"type": "string"
+		}
+	}
+}

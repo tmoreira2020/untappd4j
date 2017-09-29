@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"monthly_count": {
+			"type": "integer"
+		},
+		"total_count": {
+			"type": "integer"
+		},
+		"total_user_count": {
+			"type": "integer"
+		},
+		"user_count": {
+			"type": "integer"
+		},
+		"weekly_count": {
+			"type": "integer"
+		}
+	}
+}
