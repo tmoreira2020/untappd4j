@@ -31,6 +31,19 @@ import okio.Buffer;
 public class UntappdTest {
 
 	@Test
+	public void getBeerNotFound() throws IOException {
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-beer-not-found.json", 404), true);
+
+		long beerId = 2397083;
+		try {
+			untappd.getBeer(beerId);
+		} catch (IOException ioex) {
+			Assert.assertEquals("This Beer ID is invalid.", ioex.getMessage());
+		}
+	}
+
+	@Test
 	public void getBrewery() throws IOException {
 		Untappd untappd = new Untappd(null, null, null, setup(
 				"/get-brewery-test.json", 200), true);
