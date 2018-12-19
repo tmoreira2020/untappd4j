@@ -17,6 +17,7 @@ package br.com.thiagomoreira.untappd.gson;
 
 import java.lang.reflect.Type;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -43,41 +44,52 @@ public class ResponseDeserializaer implements JsonDeserializer<Response> {
 
 		response.setMeta(meta);;
 
-		JsonObject responseJsonObject = rootJsonObject.get("response")
-				.getAsJsonObject();
+		JsonElement responseJsonElement = rootJsonObject.get("response");
+		if (responseJsonElement.isJsonObject()) {
+			JsonObject responseJsonObject = responseJsonElement
+					.getAsJsonObject();
 
-		if (responseJsonObject.has("brewery")) {
-			Brewery breweryInfo = context.deserialize(
-					responseJsonObject.get("brewery"), Brewery.class);
+			if (responseJsonObject.has("brewery")) {
+				Brewery breweryInfo = context.deserialize(
+						responseJsonObject.get("brewery"), Brewery.class);
 
-			response.setResponse(breweryInfo);
-		}
-		if (responseJsonObject.has("beer")) {
-			Beer beer = context.deserialize(responseJsonObject.get("beer"),
-					Beer.class);
+				response.setResponse(breweryInfo);
+			}
+			if (responseJsonObject.has("beer")) {
+				Beer beer = context.deserialize(responseJsonObject.get("beer"),
+						Beer.class);
 
-			response.setResponse(beer);
-		}
+				response.setResponse(beer);
+			}
 
-		if (responseJsonObject.has("user")) {
-			User user = context.deserialize(responseJsonObject.get("user"),
-					User.class);
+			if (responseJsonObject.has("user")) {
+				User user = context.deserialize(responseJsonObject.get("user"),
+						User.class);
 
-			response.setResponse(user);
-		}
+				response.setResponse(user);
+			}
 
-		if (responseJsonObject.has("beers")) {
-			Beers beers = context.deserialize(responseJsonObject.get("beers"),
-					Beers.class);
+			if (responseJsonObject.has("beers")) {
+				Beers beers = context.deserialize(
+						responseJsonObject.get("beers"), Beers.class);
 
-			response.setResponse(beers);
-		}
+				response.setResponse(beers);
+			}
 
-		if (responseJsonObject.has("venue")) {
-			Venue venue = context.deserialize(responseJsonObject.get("venue"),
-					Venue.class);
+			if (responseJsonObject.has("venue")) {
+				Venue venue = context.deserialize(
+						responseJsonObject.get("venue"), Venue.class);
 
-			response.setResponse(venue);
+				response.setResponse(venue);
+			}
+		} else if (responseJsonElement.isJsonArray()) {
+			JsonArray responseJsonArray = responseJsonElement.getAsJsonArray();
+			if (responseJsonArray.size() == 0) {
+				response.setResponse(new Object[0]);
+			} else {
+				throw new JsonParseException("Unable to deserialize "
+						+ responseJsonArray.getAsString());
+			}
 		}
 
 		return response;
