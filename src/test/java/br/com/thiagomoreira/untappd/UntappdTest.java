@@ -32,8 +32,8 @@ public class UntappdTest {
 
 	@Test
 	public void getBrewery() throws IOException {
-		Untappd untappd = new Untappd(null, null, null,
-				setup("/get-brewery-test.json"), true);
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-brewery-test.json", 200), true);
 
 		long breweryId = 207389;
 		Brewery brewery = untappd.getBrewery(breweryId);
@@ -44,8 +44,8 @@ public class UntappdTest {
 
 	@Test
 	public void getBeersByUsername() throws IOException {
-		Untappd untappd = new Untappd(null, null, null,
-				setup("/get-beers-by-username-test.json"), true);
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-beers-by-username-test.json", 200), true);
 
 		Beers beers = untappd.getBeersByUsername("tmoreira2020", 0, 50);
 
@@ -54,8 +54,8 @@ public class UntappdTest {
 
 	@Test
 	public void getUser() throws IOException {
-		Untappd untappd = new Untappd(null, null, null,
-				setup("/get-user-test.json"), true);
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-user-test.json", 200), true);
 
 		String username = "tmoreira2020";
 		User user = untappd.getUser(username);
@@ -66,8 +66,8 @@ public class UntappdTest {
 
 	@Test
 	public void getVenue() throws IOException {
-		Untappd untappd = new Untappd(null, null, null,
-				setup("/get-venue-test.json"), true);
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-venue-test.json", 200), true);
 
 		int venueId = 6781864;
 		Venue venue = untappd.getVenue(venueId);
@@ -76,13 +76,18 @@ public class UntappdTest {
 		Assert.assertEquals(venueId, venue.getVenueId());;
 	}
 
-	protected String setup(String jsonPath) throws IOException {
+	protected String setup(String jsonPath, int code) throws IOException {
 		MockWebServer server = new MockWebServer();
 		Buffer buffer = new Buffer();
 
 		buffer.readFrom(getClass().getResourceAsStream(jsonPath));
 
-		server.enqueue(new MockResponse().setBody(buffer));
+		MockResponse response = new MockResponse();
+
+		response.setBody(buffer);
+		response.setResponseCode(code);
+
+		server.enqueue(response);
 
 		server.start();
 
