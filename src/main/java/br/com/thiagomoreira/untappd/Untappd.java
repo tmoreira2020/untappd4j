@@ -16,6 +16,7 @@
 package br.com.thiagomoreira.untappd;
 
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,8 +35,10 @@ import br.com.thiagomoreira.untappd.service.BreweryService;
 import br.com.thiagomoreira.untappd.service.UserService;
 import br.com.thiagomoreira.untappd.service.VenueService;
 import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
+import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -45,6 +48,7 @@ public class Untappd {
 	protected BreweryService breweryService;
 	protected UserService userService;
 	protected VenueService venueService;
+	protected Retrofit retrofit;
 
 	public Untappd(String clientId, String clientSecret) {
 		this(clientId, clientSecret, null, false);
@@ -80,7 +84,7 @@ public class Untappd {
 				clientId, clientSecret, accessToken));
 
 		Retrofit.Builder builder = new Retrofit.Builder();
-		Retrofit retrofit = builder.baseUrl(baseUrl)
+		retrofit = builder.baseUrl(baseUrl)
 				.addConverterFactory(GsonConverterFactory.create(gson))
 				.client(httpClientBuilder.build()).build();
 
@@ -100,7 +104,7 @@ public class Untappd {
 
 			return (Brewery) response2.getResponse();
 		} else {
-			throw new IOException(response2.getMeta().getErrorDetail());
+			throw handleError(response);
 		}
 	}
 
@@ -114,7 +118,7 @@ public class Untappd {
 
 			return (Beer) response2.getResponse();
 		} else {
-			throw new IOException(response2.getMeta().getErrorDetail());
+			throw handleError(response);
 		}
 	}
 
@@ -130,7 +134,7 @@ public class Untappd {
 
 			return (Beers) response2.getResponse();
 		} else {
-			throw new IOException(response2.getMeta().getErrorDetail());
+			throw handleError(response);
 		}
 	}
 
@@ -144,7 +148,7 @@ public class Untappd {
 
 			return (User) response2.getResponse();
 		} else {
-			throw new IOException(response2.getMeta().getErrorDetail());
+			throw handleError(response);
 		}
 	}
 
@@ -158,8 +162,22 @@ public class Untappd {
 
 			return (Venue) response2.getResponse();
 		} else {
-			throw new IOException(response2.getMeta().getErrorDetail());
+			throw handleError(response);
 		}
 	}
 
+	protected IOException handleError(retrofit2.Response<?> response) {
+		Converter<ResponseBody, Response> converter = retrofit
+				.responseBodyConverter(Response.class, new Annotation[0]);
+
+		Response error;
+
+		try {
+			error = converter.convert(response.errorBody());
+		} catch (IOException ioex) {
+			return ioex;
+		}
+
+		return new IOException(error.getMeta().getErrorDetail());
+	}
 }
