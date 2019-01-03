@@ -17,6 +17,7 @@
 		"items": {
 			"type": "array",
 			"items": {
+				"javaName": "BeerListItem",
 				"type": "object",
 				"properties": {
 					"has_had": {
