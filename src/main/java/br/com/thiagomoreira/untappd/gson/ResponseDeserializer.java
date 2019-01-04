@@ -32,7 +32,7 @@ import br.com.thiagomoreira.untappd.model.Response;
 import br.com.thiagomoreira.untappd.model.User;
 import br.com.thiagomoreira.untappd.model.Venue;
 
-public class ResponseDeserializaer implements JsonDeserializer<Response> {
+public class ResponseDeserializer implements JsonDeserializer<Response> {
 
 	@Override
 	public Response deserialize(JsonElement json, Type typeOfT,

@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import br.com.thiagomoreira.untappd.gson.ResponseDeserializaer;
+import br.com.thiagomoreira.untappd.gson.ResponseDeserializer;
 import br.com.thiagomoreira.untappd.model.Beer;
 import br.com.thiagomoreira.untappd.model.Beers;
 import br.com.thiagomoreira.untappd.model.Brewery;
@@ -68,7 +68,7 @@ public class Untappd {
 			String baseUrl, boolean debug) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		Gson gson = gsonBuilder.registerTypeAdapter(new TypeToken<Response>() {
-		}.getType(), new ResponseDeserializaer()).create();
+		}.getType(), new ResponseDeserializer()).create();
 
 		OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
 
