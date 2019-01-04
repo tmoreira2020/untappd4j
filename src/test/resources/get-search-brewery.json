@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "code": 200,
+    "response_time": {
+      "time": 0.03,
+      "measure": "seconds"
+    },
+    "init_time": {
+      "time": 0,
+      "measure": "seconds"
+    }
+  },
+  "notifications": [],
+  "response": {
+    "engine": "_algolia",
+    "page": 0,
+    "search_type": "wildcard",
+    "sort": "",
+    "term": "grist",
+    "key": "grist",
+    "found": 17,
+    "brewery": {
+      "count": 17,
+      "items": [
+        {
+          "brewery": {
+            "brewery_id": 198885,
+            "beer_count": 367,
+            "brewery_name": "Southern Grist Brewing Company",
+            "brewery_slug": "southern-grist-brewing-company",
+            "brewery_page_url": "/SouthernGristBrewing",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-198885_62e80.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Nashville",
+              "brewery_state": "TN",
+              "lat": 36.1622,
+              "lng": -86.8479
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 69178,
+            "beer_count": 98,
+            "brewery_name": "Grist House Craft Brewery ",
+            "brewery_slug": "grist-house-craft-brewery",
+            "brewery_page_url": "/GristHouseBrewing",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-69178_fa038.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Pittsburgh",
+              "brewery_state": "PA",
+              "lat": 40.4789,
+              "lng": -79.972
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 88753,
+            "beer_count": 280,
+            "brewery_name": "Grist Brewing Company",
+            "brewery_slug": "grist-brewing-company",
+            "brewery_page_url": "/GristBrewingCompany",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-88753_ad9bd.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Highlands Ranch",
+              "brewery_state": "CO",
+              "lat": 39.5491,
+              "lng": -105.034
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 133275,
+            "beer_count": 44,
+            "brewery_name": "Grist Iron Brewing Company",
+            "brewery_slug": "grist-iron-brewing-company",
+            "brewery_page_url": "/GristIronBrewingCompany",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-133275_1a46e.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Burdett",
+              "brewery_state": "NY",
+              "lat": 42.4701,
+              "lng": -76.8668
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 10342,
+            "beer_count": 2,
+            "brewery_name": "Old Grist Mill Tavern",
+            "brewery_slug": "old-grist-mill-tavern",
+            "brewery_page_url": "/w/old-grist-mill-tavern/10342",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Seekonk",
+              "brewery_state": "MA",
+              "lat": 41.8171,
+              "lng": -71.3353
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 279703,
+            "beer_count": 15,
+            "brewery_name": "Grist & Kettle Brewing Company",
+            "brewery_slug": "grist-and-kettle-brewing-company",
+            "brewery_page_url": "/GristandKettleBrewing",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-279703_d1bd9.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Leominster",
+              "brewery_state": "MA",
+              "lat": 42.5251,
+              "lng": -71.7598
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 199820,
+            "beer_count": 14,
+            "brewery_name": "Gristmill Brewing Company",
+            "brewery_slug": "gristmill-brewing-company",
+            "brewery_page_url": "/GristmillBrewingCompany",
+            "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-199820_eede8.jpeg",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "Falcon",
+              "brewery_state": "CO",
+              "lat": 38.9237,
+              "lng": -104.608
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 381001,
+            "beer_count": 5,
+            "brewery_name": "Grist Beer Hall",
+            "brewery_slug": "grist-beer-hall",
+            "brewery_page_url": "/w/grist-beer-hall/381001",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 347644,
+            "beer_count": 1,
+            "brewery_name": "Newlin Grist Mill",
+            "brewery_slug": "newlin-grist-mill",
+            "brewery_page_url": "/w/newlin-grist-mill/347644",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 70323,
+            "beer_count": 1,
+            "brewery_name": "NU GRIST",
+            "brewery_slug": "nu-grist",
+            "brewery_page_url": "/w/nu-grist/70323",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 292818,
+            "beer_count": 1,
+            "brewery_name": "Grist",
+            "brewery_slug": "grist",
+            "brewery_page_url": "/w/grist/292818",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 58952,
+            "beer_count": 16,
+            "brewery_name": "Grist Mill Brewing Company (Homebrew)",
+            "brewery_slug": "grist-mill-brewing-company",
+            "brewery_page_url": "/w/grist-mill-brewing-company/58952",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 293970,
+            "beer_count": 17,
+            "brewery_name": "Grist Mill Xing Brewing Company (Homebrew)",
+            "brewery_slug": "grist-mill-xing-brewing-company",
+            "brewery_page_url": "/w/grist-mill-xing-brewing-company/293970",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 99553,
+            "beer_count": 13,
+            "brewery_name": "Grist Homebrew Club (Homebrew)",
+            "brewery_slug": "grist-homebrew-club",
+            "brewery_page_url": "/w/grist-homebrew-club/99553",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 67386,
+            "beer_count": 1,
+            "brewery_name": "GristlyEnd Brewery (Homebrew)",
+            "brewery_slug": "gristlyend-brewery",
+            "brewery_page_url": "/w/gristlyend-brewery/67386",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "Ireland",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 194483,
+            "beer_count": 1,
+            "brewery_name": "Grist Grinder (Homebrew)",
+            "brewery_slug": "grist-grinder",
+            "brewery_page_url": "/w/grist-grinder/194483",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        },
+        {
+          "brewery": {
+            "brewery_id": 205315,
+            "beer_count": 2,
+            "brewery_name": "A Tribe Called Grist (Homebrew)",
+            "brewery_slug": "a-tribe-called-grist",
+            "brewery_page_url": "/w/a-tribe-called-grist/205315",
+            "brewery_label": "https://untappd.akamaized.net/site/assets/images/temp/badge-brewery-default.png",
+            "country_name": "United States",
+            "location": {
+              "brewery_city": "",
+              "brewery_state": "",
+              "lat": 0,
+              "lng": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

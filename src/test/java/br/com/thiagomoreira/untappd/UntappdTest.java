@@ -17,13 +17,10 @@ package br.com.thiagomoreira.untappd;
 
 import java.io.IOException;
 
+import br.com.thiagomoreira.untappd.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.thiagomoreira.untappd.model.Beers;
-import br.com.thiagomoreira.untappd.model.Brewery;
-import br.com.thiagomoreira.untappd.model.User;
-import br.com.thiagomoreira.untappd.model.Venue;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okio.Buffer;
@@ -53,6 +50,19 @@ public class UntappdTest {
 
 		Assert.assertNotNull(brewery);
 		Assert.assertEquals(breweryId, brewery.getBreweryId());;
+	}
+
+	@Test
+	public void searchBrewery() throws IOException {
+		Untappd untappd = new Untappd(null, null, null, setup(
+				"/get-search-brewery.json", 200), true);
+
+		String query = "grist";
+		BrewerySearch brewerySearch = untappd.brewerySearch(query, null, null);
+
+		Assert.assertNotNull(brewerySearch);
+		Assert.assertEquals(query, brewerySearch.getTerm());
+
 	}
 
 	@Test
