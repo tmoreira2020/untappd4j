@@ -20,6 +20,7 @@
 				"items": {
 					"type": "array",
 					"items": {
+						"javaName": "UserBeersItem",
 						"type": "object",
 						"properties": {
 							"first_checkin_id": {
