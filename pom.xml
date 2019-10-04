@@ -132,7 +132,7 @@
 						<include>**/*.json</include>
 					</includes>
 					<includeJsr303Annotations>false</includeJsr303Annotations>
-                    <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+					<outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
 					<removeOldOutput>true</removeOldOutput>
 					<useCommonsLang3>true</useCommonsLang3>
 					<usePrimitives>true</usePrimitives>
