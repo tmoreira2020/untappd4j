@@ -18,17 +18,12 @@ package br.com.thiagomoreira.untappd;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 
+import br.com.thiagomoreira.untappd.model.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import br.com.thiagomoreira.untappd.gson.ResponseDeserializaer;
-import br.com.thiagomoreira.untappd.model.Beer;
-import br.com.thiagomoreira.untappd.model.Beers;
-import br.com.thiagomoreira.untappd.model.Brewery;
-import br.com.thiagomoreira.untappd.model.Response;
-import br.com.thiagomoreira.untappd.model.User;
-import br.com.thiagomoreira.untappd.model.Venue;
+import br.com.thiagomoreira.untappd.gson.ResponseDeserializer;
 import br.com.thiagomoreira.untappd.security.UntappdAuthorizationInterceptor;
 import br.com.thiagomoreira.untappd.service.BeerService;
 import br.com.thiagomoreira.untappd.service.BreweryService;
@@ -68,7 +63,7 @@ public class Untappd {
 			String baseUrl, boolean debug) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		Gson gson = gsonBuilder.registerTypeAdapter(new TypeToken<Response>() {
-		}.getType(), new ResponseDeserializaer()).create();
+		}.getType(), new ResponseDeserializer()).create();
 
 		OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
 
@@ -107,6 +102,27 @@ public class Untappd {
 			throw handleError(response);
 		}
 	}
+
+    /**
+     * This will allow you to search exclusively for breweries in the Untappd system.
+     *
+     * @param breweryQuery (required) The search term that you want to search
+     * @param offset       (optional) The numeric offset that you what results to start
+     * @param limit        (optional) The number of results to return, max of 50, default is 25
+     * @return {@link BrewerySearch}
+     * @throws IOException IOException
+     */
+    public BrewerySearch brewerySearch(String breweryQuery, Integer offset, Integer limit) throws IOException {
+        Call<Response> call = breweryService.searchBrewery(breweryQuery, offset, limit);
+        retrofit2.Response<Response> response = call.execute();
+        Response response2 = response.body();
+
+        if (response.isSuccessful()) {
+            return (BrewerySearch) response2.getResponse();
+        } else {
+            throw handleError(response);
+        }
+    }
 
 	public Beer getBeer(long beerId) throws IOException {
 		Call<Response> call = beerService.getBeer(beerId);

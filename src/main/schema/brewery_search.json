@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "engine": {
+      "type": "string"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "search_type": {
+      "type": "string"
+    },
+    "sort": {
+      "type": "string"
+    },
+    "term": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "found": {
+      "type": "integer"
+    },
+    "brewery": {
+      "javaName": "Breweries",
+      "javaType": "br.com.thiagomoreira.untappd.model.BreweryResults"
+    }
+  }
+}

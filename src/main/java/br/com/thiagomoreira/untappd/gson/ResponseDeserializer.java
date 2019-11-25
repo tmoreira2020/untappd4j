@@ -17,6 +17,7 @@ package br.com.thiagomoreira.untappd.gson;
 
 import java.lang.reflect.Type;
 
+import br.com.thiagomoreira.untappd.model.*;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -24,15 +25,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 
-import br.com.thiagomoreira.untappd.model.Beer;
-import br.com.thiagomoreira.untappd.model.Beers;
-import br.com.thiagomoreira.untappd.model.Brewery;
-import br.com.thiagomoreira.untappd.model.Meta;
-import br.com.thiagomoreira.untappd.model.Response;
-import br.com.thiagomoreira.untappd.model.User;
-import br.com.thiagomoreira.untappd.model.Venue;
-
-public class ResponseDeserializaer implements JsonDeserializer<Response> {
+public class ResponseDeserializer implements JsonDeserializer<Response> {
 
 	@Override
 	public Response deserialize(JsonElement json, Type typeOfT,
@@ -42,14 +35,21 @@ public class ResponseDeserializaer implements JsonDeserializer<Response> {
 		Meta meta = context.deserialize(rootJsonObject.get("meta"), Meta.class);
 		Response response = new Response();
 
-		response.setMeta(meta);;
+		response.setMeta(meta);
 
 		JsonElement responseJsonElement = rootJsonObject.get("response");
 		if (responseJsonElement.isJsonObject()) {
 			JsonObject responseJsonObject = responseJsonElement
 					.getAsJsonObject();
 
-			if (responseJsonObject.has("brewery")) {
+
+			if (responseJsonObject.has("brewery") && responseJsonObject.has("engine")) {
+				BrewerySearch breweryInfo = context.deserialize(
+						responseJsonObject, BrewerySearch.class);
+
+				response.setResponse(breweryInfo);
+			}
+			if (responseJsonObject.has("brewery") && !responseJsonObject.has("engine")) {
 				Brewery breweryInfo = context.deserialize(
 						responseJsonObject.get("brewery"), Brewery.class);
 

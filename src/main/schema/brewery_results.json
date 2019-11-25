@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "javaName": "BrewerySearchItem",
+        "type": "object",
+        "properties": {
+          "brewery": {
+            "javaType": "br.com.thiagomoreira.untappd.model.Brewery"
+          }
+        }
+      }
+    }
+  }
+}
